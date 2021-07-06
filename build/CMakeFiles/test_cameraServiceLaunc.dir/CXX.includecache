@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jetson/develop/Camera_Service_deploy/lib/Stream/stream.h
+iostream
+-
+unistd.h
+-
+sys/wait.h
+-
+signal.h
+-
+
+/home/jetson/develop/Camera_Service_deploy/main.cpp
+iostream
+-
+lib/Stream/stream.h
+/home/jetson/develop/Camera_Service_deploy/lib/Stream/stream.h
+

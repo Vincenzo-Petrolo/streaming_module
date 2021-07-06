@@ -7,3 +7,6 @@ build:
     cmake .. &&\
     echo "\n\033[1;93m█ Compiling...\033[0m\n" &&\
     cmake --build .
+
+clean:
+	rm -rf build

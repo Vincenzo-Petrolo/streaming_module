@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="10.0.0.105" id="b1c935f5-5c0a-430b-aea1-30a6f9f683f4" port="22" customName="DIANA_Xavier" nameFormat="CUSTOM" username="jetson" />
+    </configs>
+  </component>
+</project>

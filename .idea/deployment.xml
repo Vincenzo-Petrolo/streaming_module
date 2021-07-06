@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="DIANA_Xavier">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="MichaelCuda (abad104d-0419-4c6a-a1ce-924756493e14)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="MichaelJetson (01aed3aa-01a6-4fa2-a7f6-eebfb98b27c8)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/streaming_module" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="MyExample (936f15bd-694c-4180-8b7e-5010f4c4e501)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WSL (46d98a62-8c8c-4e57-a00c-470a3df61a3e)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Xavier_DIANA (a7ea8ad6-3d50-4f37-8ba2-3c222017cdde)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/jetson/develop/Camera_Service_deploy" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-xavier_diana" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

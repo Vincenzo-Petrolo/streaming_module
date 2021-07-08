@@ -19,8 +19,12 @@
       <paths name="MichaelJetson (01aed3aa-01a6-4fa2-a7f6-eebfb98b27c8)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/streaming_module" local="$PROJECT_DIR$" />
+            <mapping deploy="/home/thomas/DIANA" local="$PROJECT_DIR$" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-xavier_diana" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-jetson" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="MyExample (936f15bd-694c-4180-8b7e-5010f4c4e501)">

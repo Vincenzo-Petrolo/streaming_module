@@ -1,3 +1,0 @@
-/home/jetson/develop/Camera_Service_deploy/build/CMakeFiles/rebuild_cache.dir
-/home/jetson/develop/Camera_Service_deploy/build/CMakeFiles/test_cameraServiceLaunc.dir
-/home/jetson/develop/Camera_Service_deploy/build/CMakeFiles/edit_cache.dir

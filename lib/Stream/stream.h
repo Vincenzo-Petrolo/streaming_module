@@ -65,9 +65,10 @@ public:
         }
     }
 
-
     ~stream(){
-        if(pid !=0) {
+        //check if son is effectively a running child:
+        // isstilrunning()=false means that the process has already been wait()ed, and closed by parent."
+        if(pid !=0 && isStillRunning()) {
             kill(pid, 15);
             wait(NULL);
             //wait for child to be closed

@@ -7,12 +7,6 @@
 #include <cstdlib>
 #include <cstdio>
 
-
-//Max number of user input args.
-#define MAXARG 3
-
-
-
 using namespace std;
 
 void displayDevices();
@@ -25,16 +19,14 @@ void displayOutIp(string ip, string port);
 
 vector <string> splitInput(string user_input);
 
-//used to simplify mods
-enum PARSE_INPUT{STREAM_START,STREAM_STOP,SERVICE_EXIT,INPUT_WRONG};
-//Args for program start
+//program args
 enum ARGS{ARG_NAME,ARG_IP,ARG_PORT,ARG_NUM};
+//used to simplify command catching
+enum PARSE_INPUT{STREAM_START,STREAM_STOP,SERVICE_EXIT,INPUT_WRONG};
 
 int main(int argc, char **argv){
-    //Args for user input
-
+    //Used to store user input
     string user_input;
-    string buff;
     //Contains and handles streams. streams are for now inicized as their input name (eg /dev/video0).
     //This means every input can stream only once at a time.
     map<string,shared_ptr<stream>> StreamsMap;
@@ -46,6 +38,7 @@ int main(int argc, char **argv){
         cerr << "Error in args number, usage:"<<endl<<"ProgramName <Receiver Ip> <Receiver port> , eg. ProgramName 10.0.0.0 100"<<endl;
         return -1;
     }
+    //get Ip address and port from args. todo: on the service, ip and port shall be taken from a TOML settings file
     string receiverIp (argv[ARG_IP]);
     string receiverPort (argv[ARG_PORT]);
 
@@ -70,12 +63,18 @@ int main(int argc, char **argv){
 
         //show streams
         displaySeparator();
-        displayStreams(StreamsMap);
+        displayStreams(StreamsMap); //notice: this will display the stream STATUS of any stream in the map,
+                                   // and automatically perform a wait if one stream is dead (ffmpeg crashed /wrong input).
+                                   // in that case, the child proess is closed correctly, but the Stream Class stays open until
+                                   // the user STOPs it, or EXITs.
+
         //get input
         displaySeparator();
         cout<<endl<<endl;
 
-        //--- User Input. todo: this part can be overrided with MOQUETTE commands
+        //--- User Input. todo: this part shall be overrided or set along with MOQUETTE functions, to get the data for the
+        //                todo: Stream to start. Ideal would be being able
+        //                todo: to input user commands via ssh or receive MQTT commands.
         getline(cin,user_input);
 
         { //scope for user_input_args
@@ -104,7 +103,6 @@ int main(int argc, char **argv){
         //clean user input
         user_input.clear();
     }
-
 }
 
 //----STRING HANDLING----//

@@ -21,7 +21,9 @@ void my_handler (int param)
 }
 /**
  * This class launches and destroys a specific stream. It makes a fork() in the constructor to launch
- * ffmpeg, and a kill() in the deconstructor to close the stream (kills ffmpeg as well)
+ * ffmpeg, and a kill() in the deconstructor to close the stream (kills ffmpeg as well). If the child dies, calling isstillrunning() will
+ * automatically wait and close it.
+ * Ideally the execlp() args in the child could be substituted with GStreamer args.
  */
 class stream {
 public:
@@ -60,7 +62,7 @@ public:
 
             throw runtime_error("Error on launching ffmpeg");
 
-        }else{ //father ?
+        }else{ //father
             cout << "stream::constructor : fork successfully done."<<endl;
         }
     }
@@ -75,7 +77,9 @@ public:
             cout << "stream::constructor : successfully killed the stream!";
         }
     }
-
+/*
+ *
+ */
     bool isStillRunning(){
         int status;
         pid_t result = waitpid(pid, &status, WNOHANG);
